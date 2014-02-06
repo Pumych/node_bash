@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<select>
+    <optgroup label="Pick a color:">
+        <option>green</option>
+        <option>blue</option>
+        <option>yellow</option>
+        <option>orange</option>
+    </optgroup>
+</select>
+<script>
+    $('select').on('change', function() {
+        $.get('/colorsRequest', { color : $(this).val() });
+    });
+</script>
+</body>
+</html>
